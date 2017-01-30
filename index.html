@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Rock Paper Scissors</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="http://bootswatch.com/darkly/bootstrap.css">
+		<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+		<link href="https://fonts.googleapis.com/css?family=Barrio" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Acme" rel="stylesheet">
+		<!-- <link rel="stylesheet" type="text/css" href="assets/css/style.css"> -->
+	</head>
+	<body>
+		<div class="main-container">
+			<nav class="navbar navbar-default navbar-fixed-top">
+ 			 <div class="container" id="header">
+    			<h1>Rock,  Paper  &amp  Scissors</h1>
+ 			 </div>
+			 </nav>
+
+			<div class="main-content">
+			<div class="row">
+				<div class="col-md-12" id="instructions">
+					<h2>Instructions</h2>
+					<h3>To begin playing...</h3>
+					<h3>press R (rock), P (paper), or S (scissors) on the keyboard</h3> 
+				</div>
+
+				<div class="row" id="scoresection">
+					<div class="col-md-6" id="humanscore">
+						<h1>Your Choice:&nbsp;&nbsp; <span id="player"></span></h1>
+					</div>
+
+					<div class="col-md-6" id="computerscore">
+					<h1>Computer Choice:&nbsp;&nbsp; <span id="computer"></span></h1>
+					</div>	
+				</div>
+			<div class="row">
+				<div class="col-md-2" id="placeholder">
+				</div>
+				<div class="col-md-3">
+				<h3>You Won:&nbsp;&nbsp;<span id="wins"></span></h3>
+				</div>
+
+				<div class="col-md-3">
+				<h3>You Lost:&nbsp;&nbsp;<span id="losses"></span></h3>
+				</div>
+
+				<div class="col-md-3">
+				<h3>It's a Tie:&nbsp;&nbsp;<span id="ties"></span></h3>
+				</div>
+				<div class="col-md-2" id="placeholder">
+				</div>
+			</div>
+			</div>
+			
+			</div>
+			<footer class="navbar navbar-default navbar-fixed-bottom">
+ 			 <div class="container">
+    			<a href="https://en.wikipedia.org/wiki/Rock%E2%80%93paper%E2%80%93scissors" target="_blank">Rock, Paper &amp Scissors</a>
+ 			 </div>
+			 </footer>
+		</div>
+   <script type="text/javascript">
+
+   // Creates an array that lists out all of the options (Rock, Paper, or Scissors).
+   var options = ["r", "p", "s"];
+
+   // creates global variables for point counter
+   var computerPoints = 0;
+   var userPoints = 0;
+   var tiePoints = 0;
+
+
+   // This function is run whenever the user presses a key.
+   document.onkeyup = function(event) {
+
+     // Determines which key was pressed
+   var userGuess = event.key;
+
+       //Added the key validation: only run the following code block if the user presses "r" or "p" or "s"
+   if ((userGuess === "r") || (userGuess === "p") || (userGuess === "s")) {
+
+     // Alerts the key the user pressed (userGuess).
+     // changed to write to html
+   document.getElementById("player").innerHTML = userGuess;
+
+     // Randomly chooses a choice from the options array. This is the Computer's guess.
+   var computerGuess = options[Math.floor(Math.random() * options.length)];
+
+      // Alerts the Computer's guess.
+      // changed to write to html
+   document.getElementById("computer").innerHTML = computerGuess;
+    }
+
+    // uses increment on the global variables
+    // removed spaces between the var and increment
+    if (userGuess + computerGuess == "rs") {
+       userPoints++;
+   } 
+
+    else if (userGuess + computerGuess == "sp") {
+       userPoints++;
+   }
+
+    else if (userGuess + computerGuess == "pr") {
+       userPoints++;
+   }
+
+    else if (userGuess + computerGuess == "rp") {
+       computerPoints++;
+   }
+
+    else if (userGuess + computerGuess == "ps") {
+       computerPoints++;
+   }
+
+    else if (userGuess + computerGuess == "sr") {
+       computerPoints++;
+   }
+
+    else if (userGuess + computerGuess == "pp") {
+       tiePoints++;
+   }
+
+    else if (userGuess + computerGuess == "ss") {
+       tiePoints++;
+   }
+
+    else if (userGuess + computerGuess == "rr") {
+       tiePoints++;
+   }
+       // writes point counters to the html
+     document.getElementById("wins").innerHTML = userPoints;
+     document.getElementById("losses").innerHTML = computerPoints;
+     document.getElementById("ties").innerHTML = tiePoints;
+ }
+
+
+ </script>
+
+
+	</body>
+</html>
