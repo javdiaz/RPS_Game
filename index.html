@@ -95,39 +95,43 @@
 
     // uses increment on the global variables
     // removed spaces between the var and increment
-    if (userGuess + computerGuess == "rs") {
+
+
+   if (userGuess == "r" && computerGuess == "s") {
        userPoints++;
    } 
 
-    else if (userGuess + computerGuess == "sp") {
+   //the following can also be used (userGuess + computerGuess == "rs")
+
+    else if (userGuess == "s" && computerGuess == "p") {
        userPoints++;
    }
 
-    else if (userGuess + computerGuess == "pr") {
+    else if (userGuess == "p" && computerGuess == "r") {
        userPoints++;
    }
 
-    else if (userGuess + computerGuess == "rp") {
+    else if (userGuess == "r" && computerGuess == "p") {
        computerPoints++;
    }
 
-    else if (userGuess + computerGuess == "ps") {
+    else if (userGuess == "p" && computerGuess == "s") {
        computerPoints++;
    }
 
-    else if (userGuess + computerGuess == "sr") {
+    else if (userGuess == "s" && computerGuess == "r") {
        computerPoints++;
    }
 
-    else if (userGuess + computerGuess == "pp") {
+    else if (userGuess == "p" && computerGuess == "p") {
        tiePoints++;
    }
 
-    else if (userGuess + computerGuess == "ss") {
+    else if (userGuess == "s" && computerGuess == "s") {
        tiePoints++;
    }
 
-    else if (userGuess + computerGuess == "rr") {
+    else if (userGuess = "r" == computerGuess == "r") {
        tiePoints++;
    }
        // writes point counters to the html
